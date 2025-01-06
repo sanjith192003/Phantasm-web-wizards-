@@ -1,0 +1,102 @@
+
+:root {
+    --primary-color: #bd12ec;
+    --secondary-color: #FF007F;
+    --font-color: #23d5e5;
+    --secondary-font-color: #62dbf4;
+    --background-color: #6e60ef;
+    --box-background: #250492;
+    --font-family-headings: 'Poppins', sans-serif;
+    --font-family-body: 'Roboto', sans-serif;
+}
+
+body {
+    font-family: var(--font-family-body);
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: var(--background-color);
+    color: var(--font-color);
+}
+
+header, footer {
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    text-align: center;
+    padding: 10px 0;
+    font-family: var(--font-family-headings);
+    box-shadow: 0 4px 8px rgba(0, 255, 255, 0.2);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.profile-box {
+    border: 2px solid var(--primary-color);
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+    font-size: 20px;
+    width: 400px;
+    background-color: var(--box-background);
+    box-shadow: 0 8px 15px rgba(0, 255, 255, 0.2);
+}
+
+.profile-box #qr-code {
+    margin-bottom: 20px;
+    width: 150px;
+    height: 150px;
+    display: inline-block;
+    border: 3px solid var(--secondary-color);
+    border-radius: 8px;
+    background-color: white;
+}
+
+.profile-table {
+    margin: 0 auto;
+    width: 100%;
+    margin-bottom: 20px;
+    border-collapse: collapse;
+    color: var(--font-color);
+    text-align: justify;
+   
+
+}
+
+.profile-table th, .profile-table td {
+    padding: 8px;
+    padding-left: 25px;
+    text-align: left;
+}
+
+.profile-table th {
+    font-weight: bold;
+    color: var(--secondary-font-color);
+}
+
+.profile-box button {
+    align-self: center;
+    padding: 12px 25px;
+    background-color: var(--primary-color);
+    color: var(--font-color);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    font-family: var(--font-family-headings);
+    text-transform: uppercase;
+    transition: background-color 0.3s, box-shadow 0.3s;
+    margin-top: 20px;
+}
+
+.profile-box button:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 4px 15px rgba(255, 0, 127, 0.5);
+}
