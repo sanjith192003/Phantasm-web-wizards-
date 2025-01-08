@@ -1,0 +1,76 @@
+body{
+    margin: 0px;
+    padding: 0px;
+}
+.anchor{
+    text-decoration: none;
+    color: black;
+}
+#ass{
+    position: absolute;
+    top:9%;
+    left:2%;
+    height: 7%;
+    width:15%;
+}
+#ass:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to right bottom , rgb(164, 36, 164),rgb(43, 43, 220));
+}
+#webdev{
+    position: absolute;
+    top:9%;
+    left:17%;
+    width: 15%;
+    height:7%;
+}
+#webdev:hover{
+    cursor: pointer;
+    background-image: linear-gradient(to right bottom , rgb(164, 36, 164),rgb(43, 43, 220));
+}
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    position:absolute;
+    overflow: scroll;
+    height: 80%;
+    width: 96%;
+    top:15%;
+    left: 2%;
+    background-color: white;
+    border: solid black 2px;
+}
+.cards{
+    position: relative;
+    height: 52%;
+    width: 20%;   
+    margin: 2%;
+    border-radius: 10%;
+    line-height: 12%;
+    border-bottom: solid black 2px;
+}
+.cards img{
+    position: relative;
+    border-radius: 20%;
+    height: 60%;
+    width: 70%;
+    margin-left: 15%;
+}
+.cards h3{
+    text-align: center;
+    font-size: 2rem;
+    color: black;
+}
+.cards p{
+    text-align: center;
+    color: black;
+}
+.cards i{
+    text-decoration: none;
+    color: black;
+    padding-top: 5%;
+    padding-left: 30%;
+}
+.cards i:hover{
+    color:rgb(183, 16, 183);
+}
