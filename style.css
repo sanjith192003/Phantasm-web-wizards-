@@ -6,95 +6,276 @@
     --glass-bg: rgba(255, 255, 255, 0.2);
     --glass-border: rgba(255, 255, 255, 0.4);
     --glass-shadow: rgba(0, 0, 0, 0.2);
-    --header-footer-bg: #00FFFF;
+    --header-footer-bg: #1a237e;
+    --footer-highlight: #ffeb3b;
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    font-family: Arial, sans-serif;
-    min-height: 100vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    align-items: center;
+    min-height: 100vh;
     background: url('image1.jpg') no-repeat center center/cover;
-    color: var(--font-color);
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
     position: relative;
 }
 
-header, footer {
-    text-align: center;
-    padding: 1rem;
+/* Full-Width Header */
+header {
     background-color: var(--header-footer-bg);
-    color: var(--font-color);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+    height: 60px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     z-index: 10;
 }
 
-main {
-    flex-grow: 1;
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-left: 15px;
+}
+
+header nav {
     display: flex;
+    gap: 20px;
+    padding-right: 15px;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: var(--footer-highlight);
+}
+
+/* Hamburger Icon for Mobile */
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+
+.hamburger i {
+    color: white;
+}
+
+/* Side Menu for Mobile */
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -500px; /* Starts from the right side */
+    width: 250px;
+    height: 100%;
+    background-color: white; /* White background for side menu */
+    color: var(--font-color);
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    transition: 0.3s;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+}
+
+.side-menu.open {
+    right: 0; /* Side menu moves from the right when opened */
+}
+
+.side-menu a {
+    color: var(--font-color);
+    text-decoration: none;
+    padding: 15px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+
+.side-menu a:hover {
+    background-color: var(--footer-highlight);
+}
+
+/* Close Button (X) */
+.close-btn {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--font-color);
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+
+.close-btn i {
+    font-size: 2.5em;
+}
+
+/* Main Section */
+main {
+    display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
-    position: relative;
-    z-index: 1;
+    flex-grow: 1;
+    padding: 20px;
 }
 
+/* Glass effect container */
 .glass-container {
-    background: var(--glass-bg);
-    border: 1px solid var(--glass-border);
-    border-radius: 16px;
-    padding: 2rem;
-    width: 320px;
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    max-width: 500px;
+    width: 100%;
     text-align: center;
-    box-shadow: 0 4px 30px var(--glass-shadow);
-    backdrop-filter: blur(5px);
-    -webkit-backdrop-filter: blur(10px);
-    z-index: 2;
 }
 
+/* QR Code Styling */
 #qr-code {
-    margin-bottom: 1rem;
-    width: 150px;
-    height: 150px;
-    border-radius: 8px;
-    border: 3px solid var(--primary-color);
-    background-color: white;
-    display: inline-block;
+    margin: 20px auto;
+    width: 128px;
+    height: 128px;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 10px;
 }
 
+/* Profile Table */
 .profile-table {
     width: 100%;
-    margin: 1rem auto;
-    text-align: left;
     border-collapse: collapse;
-    color: var(--font-color);
-    font-size: large;
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.profile-table th, .profile-table td {
+    padding: 8px 12px;
 }
 
 .profile-table th {
-    color: var(--font-color);
-    font-weight: bold;
-    padding: 0.5rem;
-    text-align: left;
-    
-}
-
-.profile-table td {
-    padding: 0.5rem;
     font-weight: bold;
 }
 
-button {
-    margin-top: 1rem;
-    background-color: var(--primary-color);
-    color: var(--font-color);
-    border: none;
-    padding: 0.5rem 1rem;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-}
-
-button:hover {
+/* Button Styling */
+#schedule-btn {
+    display: block;
+    width: 100%;
+    padding: 10px;
     background-color: var(--secondary-color);
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#schedule-btn:hover {
+    background-color: var(--footer-highlight);
+}
+
+/* Footer Styles */
+footer {
+    background-color: var(--header-footer-bg);
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.2);
+}
+
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+
+footer a {
+    color: var(--footer-highlight);
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+}
+
+footer .social-icons a {
+    color: white;
+    margin: 0 5px;
+    font-size: 1.2em;
+    transition: color 0.3s ease;
+}
+
+footer .social-icons a:hover {
+    color: var(--footer-highlight);
+}
+
+/* Overlay for Dimmed Background */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* Dimmed background */
+    z-index: 50;
+    display: none;
+}
+
+/* Media Queries for Mobile */
+@media (max-width: 768px) {
+    /* Hide navigation links on mobile */
+    header nav {
+        display: none;
+    }
+
+    /* Show hamburger icon */
+    .hamburger {
+        display: block;
+    }
+
+    /* Style for the side menu */
+    .side-menu.open {
+        right: 0;
+    }
+
+    /* Adjust close button on mobile */
+    .close-btn {
+        top: 10px;
+        left: 15px;
+    }
+
+    .close-btn i {
+        font-size: 2.5em;
+    }
+
+    /* Display overlay when menu is open */
+    .overlay {
+        display: block;
+    }
+}
+
+/* Media Queries for Desktop */
+@media (min-width: 769px) {
+    /* Hide hamburger icon on desktop */
+    .hamburger {
+        display: none;
+    }
+
+    /* Show full nav on desktop */
+    header nav {
+        display: flex;
+    }
 }
