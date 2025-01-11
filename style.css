@@ -6,8 +6,8 @@
     --glass-bg: rgba(255, 255, 255, 0.2);
     --glass-border: rgba(255, 255, 255, 0.4);
     --glass-shadow: rgba(0, 0, 0, 0.2);
-    --header-footer-bg: #1a237e;
-    --footer-highlight: #ffeb3b;
+    --header-footer-bg: #043d75;
+    --footer-highlight: #c40eae;
 }
 
 body {
@@ -188,6 +188,7 @@ main {
 /* Footer Styles */
 footer {
     background-color: var(--header-footer-bg);
+    backdrop-filter: blur(10px);
     color: white;
     text-align: center;
     padding: 15px 10px;
