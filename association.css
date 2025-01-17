@@ -1,0 +1,332 @@
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+.background{
+    position: absolute;
+    right: 0%;
+    bottom: 0%;
+    z-index: -1;
+    background-size:auto;
+}
+
+header {
+    background-color:transparent;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 60px;
+    width: 100%;
+    border-bottom: solid white 2px;
+}
+header .logo {
+    font-size: 1.5em;
+    font-weight: bold;
+    padding-left: 25px;
+    color: white;
+}
+header nav {
+    display: flex;
+    gap: 30px;
+    padding-right: 15px;
+}
+header nav a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+}
+header nav a:hover {
+    color: blue;
+}
+.hamburger {
+    display: none;
+    font-size: 1.5em;
+    cursor: pointer;
+}
+.hamburger i {
+    color: white;
+}
+.side-menu {
+    position: fixed;
+    top: 0;
+    right: -500px; 
+    width: 250px;
+    height: 100%;
+    background-color:black;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 60px;
+    transition: 0.3s;
+    z-index: 100;
+}
+.side-menu a {
+    color: white;
+    text-decoration: none;
+    padding: 15px;
+    font-size: 1.2em;
+    transition: background-color 0.3s ease;
+}
+.side-menu a:hover {
+    background-color: blue;
+}
+.close-btn {
+    display: flex;
+    justify-content: flex-start;
+    padding: 10px;
+    cursor: pointer;
+    color: white;
+    position: absolute;
+    top: 15px;
+    left: 15px;
+}
+.close-btn i {
+    font-size: 2.5em;
+}
+.anchor {
+    text-decoration: none;
+    color:black;
+}
+
+#ass {
+    position: absolute;
+    top: 9%;
+    height: 7%;
+    width: 15%;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    left: 2%;
+}
+#webdev {
+    position: absolute;
+    top: 9%;
+    height: 7%;
+    width: 15%;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border-radius: 5px;
+    left: 17%;
+}
+
+#ass:hover, #webdev:hover {
+    cursor: pointer;
+    background-image: linear-gradient(to right bottom, rgb(164, 36, 164), rgb(43, 43, 220));
+}
+
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    position: absolute;
+    overflow-y: scroll;
+    height: 42%;
+    width: 96%;
+    top: 47%;
+    left: 2%;
+    background-color: transparent;
+}
+
+.cards {
+    padding-top: 5%;
+    position: relative;
+    height: 70%;
+    width: 15%;
+    flex-basis: 17%; 
+    margin: 10px;
+    border-radius: 10%;
+    border-bottom: solid white 2px;
+    transition: transform 0.3s ease;
+}
+
+.cards:hover {
+    transform: scale(1.05); 
+}
+
+.cards img {
+    border-radius: 50%;
+    height: 40%;
+    width: 100%;
+    max-width: 120px; 
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+}
+
+.cards h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    color: white;
+}
+
+.cards p {
+    text-align: center;
+    color:white;
+}
+
+.cards i {
+    text-decoration: none;
+    color: white;
+    display: block;
+    font-size: 1.5rem;
+    display: inline-block;
+    position: relative;
+    padding: 0 15%;
+}
+
+.cards i:hover {
+    color: blue;
+}
+
+.gs {
+    display: inline-block;
+    position: absolute;
+    height: 30%;
+    width: 96%;
+    top: 16%;
+    left: 2%;
+    border-bottom: solid white 2px;
+    border-radius: 10%;
+}
+
+.gs img {
+    position: relative;
+    height: 50%;
+    width: 15%;
+    left: 15%;
+    top: 15%;
+    border-radius: 50%;
+}
+
+.gs h3 {
+    position: relative;
+    text-align: center;
+    bottom: 70%;
+    font-size: 2em;
+    color: white;
+}
+
+.gs p {
+    position: relative;
+    text-align: center;
+    bottom: 60%;
+    font-size: 1.5em;
+    color: white;
+}
+
+.gs i {
+    text-decoration: none;
+    color: white;
+    position: relative;
+    left: 45%;
+    bottom: 50%;
+    font-size: 1.5em;
+    padding: 0 2%;
+}
+
+.gs i:hover {
+    color: blue;
+}
+footer {
+    border-top: solid white 2px;
+    background-color:transparent;
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+footer p {
+    margin: 5px 0;
+    font-size: 0.9em;
+}
+footer .social-icons a {
+    color: white;
+    padding: 0 20px;
+    font-size: 1.2em;
+}
+footer .social-icons a:hover {
+    color: blue;
+}
+
+
+
+@media screen and (min-width:769px) {
+    .hamburger {
+        display: none;
+    }
+    header nav {
+        display: flex;
+    }
+    .cards {
+        flex-basis: 17%; 
+    }
+    
+}
+
+
+
+@media screen and (max-width:768px) {
+    header nav {
+        display: none;
+    }
+    .hamburger {
+        display: block;
+    }
+    .side-menu.open {
+        right: 0;
+    }
+    .close-btn {
+        top: 10px;
+        left: 15px;
+    }
+    .close-btn i {
+        font-size: 2.5em;
+    }
+    .overlay {
+        display: block;
+    }
+    
+    .cards {
+        flex-basis: 33%; 
+        margin: 5px 0;
+        height: 65%;
+    }
+    .cards i{
+        font-size: 1em;
+        padding-right: 25%;
+    }
+
+    #ass, #webdev {
+        width: 50%;
+    }
+    #webdev{
+        left: 50%;
+    }
+
+    .gs img{
+        width: 30%;
+        height: 60%;
+    }
+    .gs h3{
+        font-size: 1.5em;
+        left: 20%;
+    }
+    .gs p{
+        left: 20%;
+        font-size: 1em;
+    }
+        
+    .gs i{
+        margin-left: 15%;
+        font-size: 1em;
+    }
+}
+
+
