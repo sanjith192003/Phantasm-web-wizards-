@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile Page</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+    <!-- Font Awesome for social icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+        header, footer {
+            position: relative;
+            background: url('Sky.jpg') no-repeat center center / cover;
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 100px;
+            overflow: hidden;
+        }
+        body{
+            margin:0;
+            font-family: Arial,sans-serif;;
+            overflow-x: hidden;
+        }
+        header {
+            padding: 0 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
+        }
+        header .logo {
+            font-size: 1.5em;
+            font-weight: bold;
+            z-index: 2;
+        }
+        header nav {
+            display: flex;
+            gap: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        header nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 1em;
+            transition: color 0.3s;
+        }
+        header nav a:hover {
+            color: #000000;
+        }
+        .ripple {
+            position: absolute;
+            width: 300px;
+            height: 300px;
+            background: rgba(255, 255, 255, 0.5);
+            border-radius: 50%;
+            animation: ripple-animation 4s infinite;
+            opacity: 0;
+            z-index: 0;
+        }
+        footer {
+            position: relative;
+            color: black;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin-top: auto;
+        }
+        footer p {
+            margin: 5px 0;
+            z-index: 10;
+            font-size: 0.9em;
+        }
+        footer a {
+            color: black;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+        main {
+            flex: 1;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+        }
+        .glass-container {
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            transition: transform 2s ease, opacity 1.5s ease;
+            transform: translateY(100px);
+            opacity: 0;
+        }
+        .glass-container.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        table {
+            width: 100%;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            text-align: left;
+            padding: 5px 0;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        @keyframes ripple-animation {
+            0% {
+                transform: scale(0);
+                opacity: 0.8;
+            }
+            100% {
+                transform: scale(4);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Full-Width Header -->
+    <header>
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+        <div class="logo">Phantasm'25</div>
+        <nav>
+            <a href="#about">About</a>
+            <a href="#events">Events</a>
+            <a href="#schedule">Schedule</a>
+            <a href="#contact">Contact</a>
+            <a href="#login">Login</a>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+        <div class="glass-container" id="profile-box">
+            <!-- QR Code container inside profile box -->
+            <div id="qr-code"></div>
+            <table class="profile-table">
+                <tr>
+                    <th>Name:</th>
+                    <td>John Doe</td>
+                </tr>
+                <tr>
+                    <th>College:</th>
+                    <td>XYZ University</td>
+                </tr>
+                <tr>
+                    <th>Year:</th>
+                    <td>3rd Year</td>
+                </tr>
+                <tr>
+                    <th>Accommodation:</th>
+                    <td>Hostel Block A</td>
+                </tr>
+            </table>
+            <button id="schedule-btn">Go to Schedule</button>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+        <div class="ripple"></div>
+        <p>&copy; 2025 CSEA. All rights reserved.</p>
+        <p>Follow us on</p>
+        <p>
+            <a href="#">Instagram</a>, <a href="#">Facebook</a>, and <a href="#">Twitter</a>.
+        </p>
+    </footer>
+
+    <script>
+    // Function to add ripple effect to a given element
+    function addRippleEffect(element) {
+        setInterval(() => {
+            const ripple = document.createElement('div');
+            ripple.className = 'ripple';
+            ripple.style.left = `${Math.random() * 100}%`;
+            ripple.style.top = `${Math.random() * 100}%`;
+            element.appendChild(ripple);
+            setTimeout(() => ripple.remove(), 4000); // Remove the ripple after animation
+        }, 1000);
+    }
+
+    // Add ripple effect to header and footer
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+    addRippleEffect(header);
+    addRippleEffect(footer);
+
+    // Show the glass container with slide-up effect
+    window.addEventListener('load', () => {
+        const profileBox = document.getElementById('profile-box');
+        profileBox.classList.add('show');
+    });
+    </script>
+</body>
+</html>
